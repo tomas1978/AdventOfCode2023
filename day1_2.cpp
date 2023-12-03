@@ -29,14 +29,18 @@ char findLastDigit(std::string s)
 //substring "one", "two", ..., "nine" in input string
 void findFirstTextDigit(std::string s) 
 {
-    std::string digits[]={"one","two","three","four","five","six","seven","eight","nine"};
+    int firstPositions[]={0,0,0,0,0,0,0,0,0};
+    int firstDigit;
+    std::string digits[]={"one","two","three","four","five","six","seven","eight","nine"}; 
     for(int i=0;i<9;i++) 
     {
-        
+        firstPositions[i]=s.find(digits[i]);
     }
-    std::string searchStr="one";
-    std::cout<<"String: "<<s.find(searchStr);
-    //return s.find(searchStr);
+    for(int i=0;i<9;i++) 
+    {
+        std::cout<<(i+1)<<": "<<firstPositions[i]<<" ";
+    }
+    
 }
 
 int main()
