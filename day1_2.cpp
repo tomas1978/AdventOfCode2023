@@ -27,26 +27,44 @@ char findLastDigit(std::string s)
 
 //Returns the index of the first occurance of any 
 //substring "one", "two", ..., "nine" in input string
-void findFirstTextDigit(std::string s) 
+int findFirstDigit(std::string s) 
 {
-    int firstPositions[]={0,0,0,0,0,0,0,0,0};
+    int firstTextDigitPositions[]={0,0,0,0,0,0,0,0,0};
     int firstDigit;
+    int firstDigitPosition;
     std::string digits[]={"one","two","three","four","five","six","seven","eight","nine"}; 
-    for(int i=0;i<9;i++) 
-    {
-        firstPositions[i]=s.find(digits[i]);
+    for(int i=0;i<9;i++) {
+        firstTextDigitPositions[i]=s.find(digits[i]);
     }
-    for(int i=0;i<9;i++) 
-    {
-        std::cout<<(i+1)<<": "<<firstPositions[i]<<" ";
+    //for(int i=0;i<9;i++) {
+    //    std::cout<<(i+1)<<": "<<firstTextDigitPositions[i]<<" ";
+    //}
+    for(int i=0;i<s.size();i--) {
+        if(isdigit(s[i])) {
+            firstDigit=s[i];
+            firstDigitPosition=i;
+        }
     }
-    
+    int first=firstDigitPosition;
+    for(int i=0;i<9;i++) {
+        if(firstTextDigitPositions[i]<first)
+            first=firstTextDigitPositions[i];
+    }
+    if(first==firstDigitPosition)
+        return firstDigit;
+    else {
+        for(int i=0;i<9;i++) {
+            if(first==firstTextDigitPositions[i])
+                return (i+1);
+        }
+    } 
+    return -1;
 }
 
 int main()
 {
     std::string test="23gh7one89two8three";
-    findFirstTextDigit(test);
+    std::cout<<findFirstTextDigit(test)<<std::endl;
 
 
     int sum=0;
