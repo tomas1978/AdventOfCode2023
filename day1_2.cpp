@@ -3,7 +3,7 @@
 #include<fstream>
 #include<vector>
 
-char findFirstDigit(std::string s) 
+/*char findFirstDigit(std::string s) 
 {
     for(int i=0;i<s.size();i++)
     {
@@ -12,7 +12,7 @@ char findFirstDigit(std::string s)
     }
 
     return '-';
-}
+}*/
 
 char findLastDigit(std::string s) 
 {
@@ -64,7 +64,11 @@ int findFirstDigit(std::string s)
 int main()
 {
     std::string test="23gh7one89two8three";
-    std::cout<<findFirstTextDigit(test)<<std::endl;
+    std::cout<<findFirstDigit(test)<<std::endl;
+
+    std::string test2="ert4three89jisixow";
+    std::cout<<findFirstDigit(test2)<<std::endl;
+
 
 
     int sum=0;
