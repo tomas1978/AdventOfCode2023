@@ -14,6 +14,30 @@
     return '-';
 }*/
 
+class Digit 
+{
+    private:
+    int position;
+    int integerValue;
+    std::string textValue;
+    
+    public:
+    Digit(){}
+    Digit(int newPos, int newIntVal, std::string newTextVal) 
+    {
+        position=newPos;
+        integerValue=newIntVal;
+        textValue=newTextVal;
+    }
+    int getPosition(){return position;}
+    void setPosition(int newPos){position=newPos;}
+    std::string getTextValue(){return textValue;}
+    void setTextValue(std::string newTextVal){textValue=newTextVal;}
+    int getIntegerValue(){return integerValue;}
+    void setIntegerValue(int newIntVal){integerValue=newIntVal;}
+
+};
+
 char findLastDigit(std::string s) 
 {
     for(int i=s.size()-1;i>=0;i--)
@@ -29,35 +53,24 @@ char findLastDigit(std::string s)
 //substring "one", "two", ..., "nine" in input string
 int findFirstDigit(std::string s) 
 {
-    int firstTextDigitPositions[]={0,0,0,0,0,0,0,0,0};
-    int firstDigit;
-    int firstDigitPosition;
-    std::string digits[]={"one","two","three","four","five","six","seven","eight","nine"}; 
-    for(int i=0;i<9;i++) {
-        firstTextDigitPositions[i]=s.find(digits[i]);
+    std::vector<Digit*> digitVector;
+    
+    digitVector.push_back(new Digit(-1,1,"one"));
+    digitVector.push_back(new Digit(-1,2,"two"));
+    digitVector.push_back(new Digit(-1,3,"three"));
+    digitVector.push_back(new Digit(-1,4,"four"));
+    digitVector.push_back(new Digit(-1,5,"five"));
+    digitVector.push_back(new Digit(-1,6,"six"));
+    digitVector.push_back(new Digit(-1,7,"seven"));
+    digitVector.push_back(new Digit(-1,8,"eight"));
+    digitVector.push_back(new Digit(-1,9,"nine")); 
+    for(int i=0;i<digitVector.size();i++) {
+       digitVector.at(i)->setIntegerValue(s.find(digitVector.at(i)->getIntegerValue()));
+       digitVector.at(i)->setPosition(i);
     }
-    //for(int i=0;i<9;i++) {
-    //    std::cout<<(i+1)<<": "<<firstTextDigitPositions[i]<<" ";
-    //}
-    for(int i=0;i<s.size();i--) {
-        if(isdigit(s[i])) {
-            firstDigit=s[i];
-            firstDigitPosition=i;
-        }
-    }
-    int first=firstDigitPosition;
-    for(int i=0;i<9;i++) {
-        if(firstTextDigitPositions[i]<first)
-            first=firstTextDigitPositions[i];
-    }
-    if(first==firstDigitPosition)
-        return firstDigit;
-    else {
-        for(int i=0;i<9;i++) {
-            if(first==firstTextDigitPositions[i])
-                return (i+1);
-        }
-    } 
+    for(int i=0;i<digitVector.size();i++) {
+       std::cout<<digitVector.at(i)->getPosition()<<" "<<std::endl;
+    }    
     return -1;
 }
 
