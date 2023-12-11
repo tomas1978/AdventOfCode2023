@@ -24,8 +24,9 @@ int findFirstDigit(std::string s)
     std::string from_beginning="";
     for(int i=0;i<s.size();i++) {
         from_beginning+=s[i];
-        if(isdigit(s[i]))
-            return isdigit(s[i]);
+        std::cout<<from_beginning<<std::endl;
+        //if(isdigit(from_beginning[i]))
+        //    return isdigit(from_beginning[i]);
     }
     //std::cout<<from_beginning<<std::endl; 
     return -1;
