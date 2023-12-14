@@ -32,39 +32,39 @@ int findFirstDigit(std::string s)
     int positions[]={0,0,0,0,0,0,0,0,0};
     if(s.find("one")<s.find("1"))
         positions[0]=s.find("one");
-    else
+    if(s.find("1")<=s.find("one"))
         positions[0]=s.find("1");
     if(s.find("two")<s.find("2"))
         positions[1]=s.find("two");
-    else
+    if(s.find("2")<=s.find("two"))
         positions[1]=s.find("2");
     if(s.find("three")<s.find("3"))
         positions[2]=s.find("three");
-    else
+    if(s.find("3")<=s.find("three"))
         positions[2]=s.find("3");
     if(s.find("four")<s.find("4"))
         positions[3]=s.find("four");
-    else
+    if(s.find("4")<=s.find("four"))
         positions[3]=s.find("4");
     if(s.find("five")<s.find("5"))
         positions[4]=s.find("five");
-    else
+    if(s.find("5")<=s.find("five"))
         positions[4]=s.find("5");
     if(s.find("six")<s.find("6"))
         positions[5]=s.find("six");
-    else
+    if(s.find("6")<=s.find("six"))
         positions[5]=s.find("6");
     if(s.find("seven")<s.find("7"))
         positions[6]=s.find("seven");
-    else
+    if(s.find("7")<=s.find("seven"))
         positions[6]=s.find("7");
     if(s.find("eight")<s.find("8"))
         positions[7]=s.find("eight");
-    else
+    if(s.find("8")<=s.find("eight"))
         positions[7]=s.find("8");
     if(s.find("nine")<s.find("9"))
         positions[8]=s.find("nine");
-    else
+    if(s.find("9")<=s.find("nine"))
         positions[8]=s.find("9");
     
     for(int i=0;i<9;i++)
@@ -76,7 +76,7 @@ int findFirstDigit(std::string s)
 
 int main()
 {
-    std::string test="23ghnine7one819two8three";
+    std::string test="fgthree2sixytonepo";
     std::cout<<findFirstDigit(test)<<std::endl;
 
     std::string test2="ert4three89jisixow";
