@@ -2,24 +2,19 @@
 #include<string>
 #include<fstream>
 #include<vector>
+#include<algorithm>
 
-/*char findFirstDigit(std::string s) 
+int findLastDigit(std::string s) 
 {
-    for(int i=0;i<s.size();i++)
-    {
-        if(isdigit(s[i]))
-            return s[i];
-    }
-
-    return '-';
-}*/
-
-char findLastDigit(std::string s) 
-{
+    std::string from_end="";
     for(int i=s.size()-1;i>=0;i--)
     {
-        if(isdigit(s[i]))
-            return s[i];
+        from_end.push_back(s[i]);
+        std::string temp=from_end;
+        reverse(temp.begin(),temp.end());
+        if(temp.find("one") || temp.find("1"))
+            return 1;
+        return -1;
     }
 
     return '-';
@@ -80,7 +75,7 @@ int main()
     std::cout<<findFirstDigit(test)<<std::endl;
 
     std::string test2="ert4three89jisixow";
-    std::cout<<findFirstDigit(test2)<<std::endl;
+    //std::cout<<findFirstDigit(test2)<<std::endl;
 
 
 
@@ -96,7 +91,7 @@ int main()
         sum+=value;
     }
 
-    std::cout<<"Sum of all calibration values: "<<sum<<std::endl;
+    //std::cout<<"Sum of all calibration values: "<<sum<<std::endl;
 
     return 0;
 }
