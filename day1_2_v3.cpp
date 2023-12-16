@@ -9,11 +9,26 @@ int findLastDigit(std::string s)
     std::string from_end="";
     for(int i=s.size()-1;i>=0;i--)
     {
-        from_end.push_back(s[i]);
-        std::string temp=from_end;
-        reverse(temp.begin(),temp.end());
-        if(temp.find("one") || temp.find("1"))
+       std::string temp="";
+       from_end.push_back(s[i]);
+       //std::string temp=from_end;
+
+       std::reverse(temp.begin(),temp.end());
+        //std::cout<<temp<<std::endl;
+        if(temp.find("one")>0 || temp.find("1")>0)
             return 1;
+        if(temp.find("two")>0 || temp.find("2")>0)
+            return 2;
+        if(temp.find("three")>0 || temp.find("3")>0)
+            return 3;
+        if(temp.find("four")>0 || temp.find("4")>0)
+            return 4;
+        if(temp.find("five")>0 || temp.find("5")>0)
+            return 4;
+        if(temp.find("four") || temp.find("4"))
+            return 4;
+        
+        
         return -1;
     }
 
@@ -71,8 +86,11 @@ int findFirstDigit(std::string s)
 
 int main()
 {
-    std::string test="fgthree2sixytonepo";
-    std::cout<<findFirstDigit(test)<<std::endl;
+    std::string test="fgthree2sixytoneptwoo";
+    //std::cout<<findFirstDigit(test)<<std::endl;
+    std::cout<<findLastDigit(test)<<std::endl;
+
+
 
     std::string test2="ert4three89jisixow";
     //std::cout<<findFirstDigit(test2)<<std::endl;
