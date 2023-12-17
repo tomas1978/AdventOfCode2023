@@ -24,15 +24,18 @@ int findLastDigit(std::string s)
         if(temp.find("four")>0 || temp.find("4")>0)
             return 4;
         if(temp.find("five")>0 || temp.find("5")>0)
-            return 4;
-        if(temp.find("four") || temp.find("4"))
-            return 4;
-        
-        
-        return -1;
+            return 5;
+        if(temp.find("six")>0 || temp.find("6"))
+            return 6;
+        if(temp.find("seven") || temp.find("7"))
+            return 7;
+        if(temp.find("eight")>0 || temp.find("8")>0)
+            return 8;
+        if(temp.find("nine")>0 || temp.find("9")>0)
+            return 9;
     }
 
-    return '-';
+    return -1;
 }
 
 //Returns the index of the first occurance of any 
