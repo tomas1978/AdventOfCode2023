@@ -10,7 +10,6 @@ int findLastDigit(std::string s)
     {
         std::string temp="";
         from_end.push_back(s[i]);
-
         std::reverse(temp.begin(),temp.end());
         if(temp.find("one")>0 || temp.find("1")>0)
             return 1;
@@ -42,6 +41,7 @@ int findFirstDigit(std::string s)
     std::string from_beginning="";
     for(int i=s.size()-1;i>=0;i--)
     {
+        std::cout<<from_beginning<<std::endl;
         if(from_beginning.find("one")>0 || from_beginning.find("1")>0)
             return 1;
         if(from_beginning.find("two")>0 || from_beginning.find("2")>0)
