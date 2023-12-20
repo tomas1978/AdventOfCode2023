@@ -42,6 +42,9 @@ int findFirstDigit(std::string s)
     for(int i=s.size()-1;i>=0;i--)
     {
         std::cout<<from_beginning<<std::endl;
+        std::cout<<"Find 1 result "<<from_beginning.find("1")<<std::endl;
+        std::cout<<"Find one result "<<from_beginning.find("one")<<std::endl;
+        
         if(from_beginning.find("one")>0 || from_beginning.find("1")>0)
             return 1;
         if(from_beginning.find("two")>0 || from_beginning.find("2")>0)
