@@ -41,12 +41,14 @@ int findFirstDigit(std::string s)
     std::string from_beginning="";
     for(int i=s.size()-1;i>=0;i--)
     {
+        std::size_t found;
+        from_beginning.push_back(s[i]);
         std::cout<<from_beginning<<std::endl;
-        std::cout<<"Find 1 result "<<from_beginning.find("1")<<std::endl;
-        std::cout<<"Find one result "<<from_beginning.find("one")<<std::endl;
-        std::cout<<"Find 2 result "<<from_beginning.find("1")<<std::endl;
-        std::cout<<"Find two result "<<from_beginning.find("one")<<std::endl;
         
+        
+        std::cout<<from_beginning.find("oool",found)<<std::endl;
+        std::cout<<found<<std::endl;
+           
         
         if(from_beginning.find("one")>0 || from_beginning.find("1")>0)
             return 1;
@@ -70,29 +72,10 @@ int findFirstDigit(std::string s)
     return -1;
 }
 
-int findFirstDigit_2(std::string s) 
-{
-    std::string from_beginning="";
-    for(int i=s.size()-1;i>=0;i--)
-    {
-      
-        
-        
-        if(from_beginning=="1" || from_beginning=="one")
-            return 1;
-        if(from_beginning=="2" || from_beginning=="two")
-            return 2;
-        if(from_beginning=="3" || from_beginning=="three")
-            return 3;
-   
-    }
-    return -1;
-}
-
 int main()
 {
     std::string test="6fgthree2sixytoneptwoo";
-    std::cout<<findFirstDigit_2(test)<<std::endl;
+    std::cout<<findFirstDigit(test)<<std::endl;
     //std::cout<<findLastDigit(test)<<std::endl;
 
 
