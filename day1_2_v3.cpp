@@ -46,8 +46,11 @@ int findFirstDigit(std::string s)
         std::cout<<from_beginning<<std::endl;
         
         
-        std::cout<<from_beginning.find("oool",found)<<std::endl;
+        std::cout<<from_beginning.find("one",found)<<std::endl;
         std::cout<<found<<std::endl;
+        std::cout<<from_beginning.find("1",found)<<std::endl;
+        std::cout<<found<<std::endl;
+        
            
         
         if(from_beginning.find("one")>0 || from_beginning.find("1")>0)
