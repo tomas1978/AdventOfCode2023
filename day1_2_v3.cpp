@@ -43,41 +43,40 @@ int findFirstDigit(std::string s)
     {
         std::size_t found;
         from_beginning.push_back(s[i]);
-        std::cout<<from_beginning<<std::endl;
+        //std::cout<<"After push_back in string: "<<from_beginning<<std::endl;
         
         
-        std::cout<<from_beginning.find("one",found)<<std::endl;
-        std::cout<<found<<std::endl;
-        std::cout<<from_beginning.find("1",found)<<std::endl;
-        std::cout<<found<<std::endl;
+        //std::cout<<from_beginning.find("one",found)<<std::endl;
+        //std::cout<<found<<std::endl;
+        //std::cout<<from_beginning.find("1",found)<<std::endl;
+        //std::cout<<found<<std::endl;
         
-           
-        
-        if(from_beginning.find("one")>0 || from_beginning.find("1")>0)
+        if(from_beginning.find("one")!=std::string::npos || from_beginning.find("1")!=std::string::npos)
             return 1;
-        if(from_beginning.find("two")>0 || from_beginning.find("2")>0)
+        if(from_beginning.find("two")!=std::string::npos || from_beginning.find("2")!=std::string::npos)
             return 2;
-        if(from_beginning.find("three")>0 || from_beginning.find("3")>0)
+        if(from_beginning.find("three")!=std::string::npos || from_beginning.find("3")!=std::string::npos)
             return 3;
-        if(from_beginning.find("four")>0 || from_beginning.find("4")>0)
+        if(from_beginning.find("four")!=std::string::npos || from_beginning.find("4")!=std::string::npos)
             return 4;
-        if(from_beginning.find("five")>0 || from_beginning.find("5")>0)
+        if(from_beginning.find("five")!=std::string::npos || from_beginning.find("5")!=std::string::npos)
             return 5;
-        if(from_beginning.find("six")>0 || from_beginning.find("6"))
+        if(from_beginning.find("six")!=std::string::npos || from_beginning.find("6")!=std::string::npos)
             return 6;
-        if(from_beginning.find("seven") || from_beginning.find("7"))
+        if(from_beginning.find("seven")!=std::string::npos || from_beginning.find("7")!=std::string::npos)
             return 7;
-        if(from_beginning.find("eight")>0 || from_beginning.find("8")>0)
+        if(from_beginning.find("eight")!=std::string::npos || from_beginning.find("8")!=std::string::npos)
             return 8;
-        if(from_beginning.find("nine")>0 || from_beginning.find("9")>0)
+        if(from_beginning.find("nine")!=std::string::npos || from_beginning.find("9")!=std::string::npos)
             return 9;
+        
     }
     return -1;
 }
 
 int main()
 {
-    std::string test="6fgthree2sixytoneptwoo";
+    std::string test="6fsix2sixytoneptwoo";
     std::cout<<findFirstDigit(test)<<std::endl;
     //std::cout<<findLastDigit(test)<<std::endl;
 
